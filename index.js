@@ -21,7 +21,7 @@ db.employees.find({$nor: [{"role": "Frontend Developer"}, {"salary": {$lt: 70000
 db.employees.insertOne({"name":"Charlie", "role":"Backend Developer", "salary":80000});
 
 // Inserting multiple documents
-db.employees.insertMany([{"name":"Sophie", "role":"UI Designer", "salary": 700000},{"name":"Chris", "role":"Frontend Developer", "salary": 75000}]);
+db.employees.insertMany([{"name":"Sophie", "role":"UI Designer", "salary": 70000},{"name":"Chris", "role":"Frontend Developer", "salary": 75000}]);
 
 // Finding employees whose salary is greater than or equal to 60000
 db.employees.find({"salary": {$gte: 60000}});
@@ -39,5 +39,5 @@ db.employees.find({$or: [{"role": "Backend Developer"},{"salary": {$gt: 90000}}]
 db.employees.find({"salary": {$gte: 70000, $lte: 90000}});
 
 // Finding employees who have both React and Node.js
-b.employees.find({"skills": {$all: ["React", "Node.js"]}})
+db.employees.find({"skills": {$all: ["React", "Node.js"]}})
 
